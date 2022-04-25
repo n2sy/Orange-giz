@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
   name: string = 'Anis';
-  cl = 'pink';
+  cl = 'green';
   hd = true;
+  s;
   constructor() {}
 
   ngOnInit(): void {}
 
   traitementDuBouton() {
     alert('Click détecté');
+  }
+
+  traitement(a) {
+    //alert(msg);
+    this.s = a;
   }
 }

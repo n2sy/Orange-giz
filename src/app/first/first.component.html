@@ -1,6 +1,8 @@
 <p>Je suis le composant First</p>
-<h2>Je m'appelle {{ name }}</h2>
+<h2>Je m'appelle {{ name }} --- {{ s }}</h2>
 <input [(ngModel)]="name" type="text">
 <div [hidden]="hd" [style.backgroundColor]="cl">Orange Dev Center</div>
 
 <button (click)="traitementDuBouton()">Click me</button>
+
+<app-child (msgToParent)="traitement($event)" [myColor]="cl"></app-child>

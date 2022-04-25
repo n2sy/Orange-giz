@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Candidat } from '../models/candidat';
 
 @Component({
   selector: 'app-first',
@@ -10,6 +11,7 @@ export class FirstComponent implements OnInit {
   cl = 'green';
   hd = true;
   s;
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
-  styleUrls: ['./liste.component.css']
+  styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
+  @Input() tabCandidats = [];
+  @Output() msgToCv = new EventEmitter();
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  sendToCv(cand) {
+    this.msgToCv.emit(cand);
   }
-
 }

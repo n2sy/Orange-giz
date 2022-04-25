@@ -4,12 +4,12 @@ export class Candidat {
   //   public prenom: string;
 
   constructor(
-    public id: number,
+    public _id: number,
     public nom: string,
     public prenom: string,
     public age: number,
     public profession: string,
-    public avatar: string
+    public avatar?: string
   ) {
     // this.id = id;
     // this.nom = nom;

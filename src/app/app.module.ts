@@ -12,9 +12,10 @@ import { DetailsComponent } from './details/details.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
+import { CustomDirDirective } from './custom-dir.directive';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, AddAccountComponent, ItemAccountComponent],
+  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, AddAccountComponent, ItemAccountComponent, CustomDirDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

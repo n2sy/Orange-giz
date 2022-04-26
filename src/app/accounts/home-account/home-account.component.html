@@ -1,1 +1,5 @@
-<p>home-account works!</p>
+<div class="container">
+
+    <app-add-account (msgToHome)="recupNewAccount($event)"></app-add-account>
+    <app-item-account [myAccount]="acc" *ngFor="let acc of tabAccounts"></app-item-account>
+</div>

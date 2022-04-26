@@ -1,1 +1,12 @@
-<p>add-account works!</p>
+<div>
+    <label for="nom">Nom :</label>
+    <input #inp type="text" class="form-control" id="nom">
+
+    <label for="statuts">Status : </label>
+    <select #sel id="status" class="form-control">
+        <!-- <option *ngFor="let st of typeStatus" value="{{st}}"> {{ st }} </option> -->
+        <option *ngFor="let st of typeStatus" [value]="st"> {{ st }} </option>
+    </select>
+    <br>
+    <button (click)="addAccount(inp.value,sel.value)" class="btn btn-info">Add Account</button>
+</div>

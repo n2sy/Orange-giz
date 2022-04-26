@@ -1,1 +1,9 @@
-<p>item-account works!</p>
+<div class="nidhal">
+    <h2> {{ myAccount.nom }} </h2>
+    <hr>
+    <p>This account is {{ myAccount.status }} </p>
+    <br>
+    <button (click)="changeStatus('active')" class="btn btn-success">Set to 'active'</button>
+    <button (click)="changeStatus('inactive')" class="btn btn-danger">Set to 'inactive'</button>
+    <button (click)="changeStatus('unknown')" class="btn btn-warning">Set to 'unknown'</button>
+</div>

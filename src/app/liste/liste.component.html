@@ -1,6 +1,6 @@
 <ol>
-    <app-item (msgToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[0]"></app-item>
-    <app-item (msgToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[1]"></app-item>
-    <app-item (msgToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[2]"></app-item>
+    <app-item *ngFor="let c of tabCandidats" (msgToListe)="sendToCv($event)" [oneCandidat]="c"></app-item>
+    <!-- <app-item (msgToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[1]"></app-item>
+    <app-item (msgToListe)="sendToCv($event)" [oneCandidat]="tabCandidats[2]"></app-item> -->
 
 </ol>

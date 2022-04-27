@@ -1,0 +1,23 @@
+<div [ngStyle]="{
+    'backgroundColor': bg,
+    'color' : cl    ,
+    'fontSize' : fSize,
+    'fontFamily' : font
+ }">Formation Ornge-GIZ</div>
+
+Background Color : <br>
+<input [(ngModel)]="bg" type="text" class="form-control">
+
+Text Color : <br>
+<input [(ngModel)]="cl" type="text" class="form-control">
+
+Font Size : <br>
+<input #sz (change)="changeSize(sz.value)" type="number" class="form-control">
+
+Font Family : <br>
+<select [(ngModel)]="font" class="form-control">
+    <option></option>
+    <option>Calibri</option>
+    <option>Garamond</option>
+    <option>Phosphate</option>
+</select>

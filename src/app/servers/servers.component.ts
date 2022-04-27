@@ -32,6 +32,8 @@ export class ServersComponent implements OnInit {
       statut: 'stable',
     },
   ];
+
+  selectedStatut;
   constructor() {}
 
   ngOnInit(): void {}

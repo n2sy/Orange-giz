@@ -21,6 +21,8 @@ import { FilterPipe } from './filter.pipe';
 import { NoImagePipe } from './no-image.pipe';
 import { FirstService } from './first.service';
 import { RecruterComponent } from './recruter/recruter.component';
+import { HomeComponent } from './home/home.component';
+import { ORANGE_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,9 @@ import { RecruterComponent } from './recruter/recruter.component';
     FilterPipe,
     NoImagePipe,
     RecruterComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ORANGE_ROUTING],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })

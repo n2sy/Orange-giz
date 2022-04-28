@@ -1,4 +1,5 @@
 <li appCustomDir (click)="sendToListe()" class="list-group-item">
-    <img src="../../assets/{{oneCandidat.avatar}}"> {{ oneCandidat.prenom | titlecase }} {{ oneCandidat.nom | uppercase
+    <img src="../../assets/{{oneCandidat.avatar | noImage}}"> {{ oneCandidat.prenom | titlecase }} {{ oneCandidat.nom |
+    uppercase
     }}
 </li>

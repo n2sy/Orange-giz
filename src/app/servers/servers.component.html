@@ -3,7 +3,7 @@
     <br>
     <ol>
         <li class="list-group-item" [ngClass]="affecterClass(serv.statut)"
-            *ngFor="let serv of tabServers& | filter:selectedStatut">
+            *ngFor="let serv of tabServers | filter:selectedStatut">
             {{ serv.name | short:100 }} | {{ serv.type }} |
             {{ serv.date_d | date:'fullDate' | uppercase}}
             <span class="badge bg-secondary">{{ serv.statut }} </span>

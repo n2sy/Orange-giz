@@ -10,7 +10,7 @@ export class CvComponent implements OnInit {
   listeCandidats: Candidat[] = [
     new Candidat(1, 'jelassi', 'nidhal', 37, 'Enseignant', 'nidhal.jpg'),
     new Candidat(2, 'simpson', 'bart', 17, 'Eleve', 'bart.jpeg'),
-    new Candidat(3, 'simpson', 'homer', 57, 'Sans travail', 'homer.jpg'),
+    new Candidat(3, 'simpson', 'homer', 57, 'Sans travail'),
   ];
   selectedCandidat: Candidat;
   constructor() {}

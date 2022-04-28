@@ -33,7 +33,7 @@ export class ServersComponent implements OnInit {
     },
   ];
 
-  selectedStatut;
+  selectedStatut = '';
   constructor() {}
 
   ngOnInit(): void {}

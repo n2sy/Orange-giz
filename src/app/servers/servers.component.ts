@@ -45,4 +45,12 @@ export class ServersComponent implements OnInit {
       'list-group-item-warning': st == 'offline' ? true : false,
     };
   }
+  addNewServer() {
+    this.tabServers.push({
+      name: 'NEW `SERVER',
+      type: 'small',
+      date_d: new Date(2022, 4, 12),
+      statut: 'stable',
+    });
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirstService } from '../first.service';
+import { ListCandidatsService } from '../list-candidats.service';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -7,18 +9,28 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  listeCandidats: Candidat[] = [
-    new Candidat(1, 'jelassi', 'nidhal', 37, 'Enseignant', 'nidhal.jpg'),
-    new Candidat(2, 'simpson', 'bart', 17, 'Eleve', 'bart.jpeg'),
-    new Candidat(3, 'simpson', 'homer', 57, 'Sans travail'),
-  ];
+  listeCandidats: Candidat[] = [];
   selectedCandidat: Candidat;
-  constructor() {}
+  constructor(
+    private firstSer: FirstService,
+    private candSer: ListCandidatsService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firstSer.showMessage();
+    this.listeCandidats = this.candSer.getAllCandidats();
+  }
 
   RecupCandidat(cand) {
     this.selectedCandidat = cand;
     console.log(this.selectedCandidat);
+  }
+
+  addCandidat() {
+    this.candSer.addCandidat(new Candidat(4, 'aaaa', 'bbbb', 44, 'xxxxx'));
+  }
+
+  showList() {
+    console.log(this.candSer.getAllCandidats());
   }
 }

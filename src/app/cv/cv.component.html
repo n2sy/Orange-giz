@@ -1,10 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            <app-liste (msgToCv)="RecupCandidat($event)" [tabCandidats]="listeCandidats"></app-liste>
+            <app-liste (msgToCv)="RecupCandidat($event)"></app-liste>
         </div>
         <div class="col-md-7">
             <app-details [selectedCand]="selectedCandidat"></app-details>
         </div>
     </div>
+    <button (click)="addCandidat()">add Candidat</button>
+
+    <button (click)="showList()">Show List From CV </button>
 </div>

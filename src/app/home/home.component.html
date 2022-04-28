@@ -1,1 +1,9 @@
 <h2>Bienvenue à notre application Angular</h2>
+
+<button (click)="goToCv()" class="btn btn-danger">Go To CV</button>
+<button (click)="goToServers()" class="btn btn-info">Go To Servers</button>
+
+<br>
+
+<button routerLink="/cv" class="btn btn-danger">Go To CV</button>
+<button [routerLink]="['servers']" class="btn btn-info">Go To Servers</button>

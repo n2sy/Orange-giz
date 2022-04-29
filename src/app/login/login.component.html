@@ -1,0 +1,35 @@
+<form #f="ngForm" (ngSubmit)="showForm(f)">
+    <input #exp="ngModel" required email minlength="4" ngModel type="text" class="form-control" id="log" name="l">
+    <div class="alert alert-danger" *ngIf="exp.invalid && exp.touched">
+        <p *ngIf="exp.errors.required">Ce champ est obligatoire</p>
+        <p *ngIf="exp.errors.email">Ce champ est une adresse mail</p>
+        <p *ngIf="exp.errors.minlength">Le nombre de caractères minimum est 4</p>
+
+    </div>
+
+    <br><br>
+    <label for="log">Login</label>
+    <input #login="ngModel" required email ngModel type="text" class="form-control" id="log" name="login">
+    <div class="alert alert-danger" *ngIf="login.invalid && login.touched">Ce champ est obligatoire et une adresse mail
+        !</div>
+
+    <label for="pwd">Mot de passe</label>
+    <input ngModel type="text" class="form-control" id="pwd" name="password">
+
+    <label for="op">Opérateur</label>
+    <select [ngModel]="defaultOperateur" name="operateur" id="op" class="form-control">
+        <option value=""></option>
+        <option value="orange">Orange</option>
+        <option value="tt">TT</option>
+        <option value="ooredoo">Ooredoo</option>
+    </select>
+    <button class="btn btn-success">Submit</button>
+    <button (click)="resetForm(f)" class="btn btn-danger">Reset</button>
+    <button (click)="randomPwd(f)" class="btn btn-info">Random password</button>
+    <button (click)="randomPwdII(f)" class="btn btn-warning">Random password II</button>
+</form>
+
+<!-- {
+prop1 : val1,
+prop2 : val2,
+} -->

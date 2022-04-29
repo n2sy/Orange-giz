@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RecrueService } from '../recrue.service';
 
 @Component({
@@ -8,11 +9,15 @@ import { RecrueService } from '../recrue.service';
 })
 export class DetailsComponent implements OnInit {
   @Input() selectedCand;
-  constructor(private recSer: RecrueService) {}
+  constructor(private recSer: RecrueService, private router: Router) {}
 
   ngOnInit(): void {}
 
   addNewRecrue() {
     this.recSer.addRecrue(this.selectedCand);
+  }
+
+  goToInfos() {
+    this.router.navigate(['/cv', this.selectedCand['_id']]);
   }
 }

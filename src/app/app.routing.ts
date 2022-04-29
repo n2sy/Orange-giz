@@ -8,6 +8,7 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { ServersComponent } from './servers/servers.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 let myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +28,7 @@ let myRoutes: Routes = [
   },
   { path: 'accounts', component: HomeAccountComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },

@@ -1,1 +1,7 @@
-<p>info-server works!</p>
+<strong> {{ selectedServ.nom }} </strong>
+<br>
+<p>Le statut du serveur est {{ selectedServ.statut }} </p>
+
+<br>
+<button [disabled]="show" [routerLink]="['/list-servers' ,'edit', selectedServ.id]" class="btn btn-info">Editer</button>
+<br><i *ngIf="show">Impossible d'editer ce serveur</i>

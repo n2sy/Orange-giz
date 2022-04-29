@@ -1,1 +1,15 @@
-<p>list-servers works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <ol>
+                <li [queryParams]="{'allow' : serv.id == 3 ? 1 : 0}" [routerLink]="[serv.id]"
+                    *ngFor="let serv of tabServers" class="list-group-item">
+                    {{ serv.nom }}
+                </li>
+            </ol>
+        </div>
+        <div class="col-md-7">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

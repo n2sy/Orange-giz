@@ -13,15 +13,18 @@ let myRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'cv',
-    component: CvComponent,
     children: [
-      //  { path: '', component: CvComponent },
+      { path: '', component: CvComponent },
       { path: 'add', component: AddComponent },
       { path: ':id', component: InfosComponent },
       { path: ':id/edit', component: UpdateComponent },
     ],
   },
 
+  {
+    path: 'list-servers',
+    loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
+  },
   { path: 'accounts', component: HomeAccountComponent },
   { path: 'servers', component: ServersComponent },
   { path: 'ms-word', component: MsWordComponent },

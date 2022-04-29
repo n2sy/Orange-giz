@@ -28,6 +28,7 @@ import { InfosComponent } from './infos/infos.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SubModule } from './sub/sub.module';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UpdateComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule, ORANGE_ROUTING],
+  imports: [BrowserModule, FormsModule, ORANGE_ROUTING, SubModule],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })

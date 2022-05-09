@@ -9,16 +9,21 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  listeCandidats: Candidat[] = [];
+  listeCandidats: any = [];
   selectedCandidat: Candidat;
   constructor(
-    private firstSer: FirstService,
+    //private firstSer: FirstService,
     private candSer: ListCandidatsService
   ) {}
 
   ngOnInit(): void {
-    this.firstSer.showMessage();
-    this.listeCandidats = this.candSer.getAllCandidats();
+    //this.firstSer.showMessage();
+    //this.listeCandidats = this.candSer.getAllCandidats();
+    this.candSer.getAllCandidatsAPI().subscribe({
+      next: (response) => {
+        this.listeCandidats = response;
+      },
+    });
   }
 
   RecupCandidat(cand) {

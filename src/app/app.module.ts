@@ -30,6 +30,8 @@ import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModule } from './sub/sub.module';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ORANGE_INTERCEPTOR } from './add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -59,8 +61,14 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, FormsModule, ORANGE_ROUTING, SubModule],
-  providers: [FirstService],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ORANGE_ROUTING,
+    SubModule,
+    HttpClientModule,
+  ],
+  providers: [FirstService, ORANGE_INTERCEPTOR],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

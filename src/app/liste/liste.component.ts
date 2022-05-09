@@ -7,7 +7,7 @@ import { ListCandidatsService } from '../list-candidats.service';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
-  tabCandidats = [];
+  @Input() tabCandidats = [];
   @Output() msgToCv = new EventEmitter();
   constructor(private candSer: ListCandidatsService) {}
 

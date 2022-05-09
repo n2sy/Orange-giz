@@ -21,15 +21,31 @@ export class InfosComponent implements OnInit {
 
     this.actRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        this.myCandidat = this.candSer.getCandidatById(p.get('id'));
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response) => {
+            this.myCandidat = response;
+          },
+          error: (err) => {
+            console.log('Probleme avec getCandidatById');
+          },
+        });
+      },
+      error: (err) => {
+        console.log('Probleme avec paramMap');
       },
     });
   }
 
   deleteCandidat() {
     if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
-      this.candSer.deleteCandidatById(this.myCandidat);
-      this.router.navigateByUrl('/cv');
+      this.candSer.deleteCandidatByIdAPI(this.myCandidat._id).subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log('Probleme avec deleteCandidat');
+        },
+      });
     }
   }
 }

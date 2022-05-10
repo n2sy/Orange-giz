@@ -9,6 +9,9 @@ import { ServersComponent } from './servers/servers.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AccesGuard } from './acces.guard';
+import { NotAccesGuard } from './not-acces.guard';
+import { LeaveLoginGuard } from './leave-login.guard';
 
 let myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +19,7 @@ let myRoutes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [AccesGuard] },
       { path: ':id', component: InfosComponent },
       { path: ':id/edit', component: UpdateComponent },
     ],
@@ -28,7 +31,12 @@ let myRoutes: Routes = [
   },
   { path: 'accounts', component: HomeAccountComponent },
   { path: 'servers', component: ServersComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [NotAccesGuard],
+    canDeactivate: [LeaveLoginGuard],
+  },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
